@@ -3,7 +3,7 @@ package com.yet.spring.core.loggers;
 import static org.junit.Assert.*;
 
 import java.util.List;
-
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -22,11 +22,12 @@ public class TestDBLogger {
     }
     
     private ConfigurableApplicationContext ctx;
-    
+
     @Before
     public void createContext() {
-        ctx  = new ClassPathXmlApplicationContext("spring.xml", 
+        ctx = new ClassPathXmlApplicationContext("spring.xml",
                 "loggers.xml", "db.xml");
+        ctx.getBean(JdbcTemplate.class).update("DELETE FROM t_event");
     }
     
     @After

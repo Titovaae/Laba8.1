@@ -2,7 +2,6 @@ package com.yet.spring.core;
 
 import java.util.Map;
 
-import com.sun.istack.internal.NotNull;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
